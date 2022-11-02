@@ -2,4 +2,10 @@
     Created on : Nov 2, 2022, 4:52:07 PM
     Author     : jaime.cacuna
 */
-.resizedTextbox {width: 100px; height: 20px}
+
+.resizedTextbox{
+    resize: none;
+    font-family: Courier, sans-serif;
+    height: 10em;
+    width: 500px;
+}
