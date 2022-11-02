@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Twitter AREP 2022-2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilos.css">
+    </head>
+    <body>
+        <h1>Hola! Bienvenido a Twitter AREP 2022-2</h1>
+        <form method="post" action="/tweet">
+            <label for="postname">Nuevo Tweet:</label><br>
+            <input type="text" class="resizedTextbox" id="tweet" name="tweet" value="Ingresa un nuevo tweet aquí"><br><br>
+            <input type="button" value="Submit" onclick="loadGetMsg(postname)">
+        </form> 
+    </body>
+<style>.resizedTextbox {width: 100px; height: 20px}</style>
+</html>
