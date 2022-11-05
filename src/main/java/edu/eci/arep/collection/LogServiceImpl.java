@@ -8,6 +8,7 @@ import com.mongodb.client.*;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 
+import javax.print.Doc;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -39,11 +40,15 @@ public class LogServiceImpl {
     public String getCurrent() {
         String allUsers = "";
         FindIterable<Document> currentUsers = customers.find();
-        ArrayList<Object> temp = new ArrayList<>();
+        ArrayList<Document> temp = new ArrayList<>();
         for (Document document : currentUsers) {
+            temp.add(document);
+
+        }
+        for(int i = temp.size()-1;i>=0;i--){
             allUsers += "<tr><td>"
-                    + document.get("tweet").toString()
-                    + "<p>" + document.get("fecha").toString()
+                    + temp.get(i).get("tweet").toString()
+                    + "<p>" + temp.get(i).get("fecha").toString()
                     + "<p>"
                     + "</tr></td>";
         }

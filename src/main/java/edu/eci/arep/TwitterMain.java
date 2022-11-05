@@ -1,6 +1,10 @@
 package edu.eci.arep;
 
 import edu.eci.arep.collection.LogServiceImpl;
+import spark.ModelAndView;
+import spark.template.velocity.VelocityTemplateEngine;
+
+import java.util.Map;
 
 import static spark.Spark.*;
 
@@ -11,7 +15,7 @@ public class TwitterMain {
     public static void main(String... args) {
         port(getPort());
         staticFileLocation("/public");
-        post("/tweet", (request, response) -> getFront(request, response));
+        post("/tweet", (request, response) -> getFront(request,response) );
 
     }
 
@@ -33,4 +37,7 @@ public class TwitterMain {
         }
     }
 
+    public static String render(String model, String templatePath) {
+        return new VelocityTemplateEngine().render(new ModelAndView(model, templatePath));
+    }
 }
